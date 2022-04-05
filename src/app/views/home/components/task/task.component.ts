@@ -20,7 +20,9 @@ export class TaskComponent implements OnInit {
 
   getData():void{
     this.homeService.getTableData().subscribe(res=>{
-      this.data = res[0]
+      // this.data = res[0]
+      const data = res.flat()
+      this.data= data
     })
   }
   checkRowValidity(email:string,gender:string){
